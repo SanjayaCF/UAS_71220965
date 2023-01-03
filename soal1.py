@@ -40,7 +40,15 @@ while belum_keluar:
         print('Pilihan Kategori Kegiatan:')
         for poin in daftar_poin_kegiatan:
             print(f' - {poin}')
-        kategori_kegiatan = input('Masukan Kategori Kegiatan: ').title()
+
+        tidak_valid = True
+        while tidak_valid:
+            kategori_kegiatan = input('Masukan Kategori Kegiatan: ').title()
+            if kategori_kegiatan in daftar_poin_kegiatan:
+                tidak_valid = False
+            
+            print('\nKategori Tidak Valid, Mohon Masukan Ulang!!!\n')
+
         print('')
         print(tambah_aktivitas(nama_aktivitas,tanggal_aktivitas,kategori_kegiatan))
         print('')
